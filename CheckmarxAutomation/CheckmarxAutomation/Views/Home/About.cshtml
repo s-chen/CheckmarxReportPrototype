@@ -1,0 +1,22 @@
+﻿<h1>About</h1>
+
+<p>This is a Checkmarx Dashboard web app written in .NET CORE MVC as part of MyAviva Hack Day 2020.</p>
+<p>The aim of this app is automate the process of analysis, generation and distribution of Checkmarx report</p>
+
+<h2>Process</h2>
+
+<p><strong>Analysis</strong></p>
+<p>As we could not obtain the Checkmarx API keys for the service in time, we have used mocked data (from the Checkmarx website) to simulate a response. (MockCheckmarxService)</p>
+<p>It was designed in a way that the real/mock implementation of the API call can be swapped as and when required.</p>
+<p>The json data is then deserialised into objects which is then mapped to the domain model. (RetrieveScanResultService)</p>
+<p>The project scan summary data from the domain model is then populated into a pie chart using the Google Chart API as shown on the dashboard which allows clear summary of a project's scan to be viewed.</p>
+
+
+<p><strong>Generate</strong></p>
+<p>The result of the project scan summary data is then used together with the CSVHelper Nuget package to write contents into a CSV file.</p>
+
+
+<p><strong>Distribute</strong></p>
+<p>The Checkmarx report which is generated will be picked up by the email component and generates an outlook extension mail message with .eml file extension which can be opened up in Outlook client.
+    The .eml file will have all the details e.g. To:,From Attachment 
+    we need to just open the outlook client and send it. Similar to a draft saved in our outlook client.</p>

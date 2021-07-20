@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Checkmarx Homepage";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to the Checkmarx Report Dashboard</h1>
+    <p>You can find the details here of the latest project scans.</p>
+    @Html.ActionLink("View project scan summary", "Summary", "Dashboard")
+    <br/>
+    @Html.ActionLink("Generate report", "CreateReport", "Home")
+    <br/>
+    @Html.ActionLink("Send report", "SendReport", "Home")
+</div>
